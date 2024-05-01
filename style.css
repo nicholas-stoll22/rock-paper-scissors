@@ -29,3 +29,18 @@
     display: flex;
     justify-content: center;
 }
+
+.game-text {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+}
+
+.score-box {
+    display: flex;
+    justify-content: center;
+}

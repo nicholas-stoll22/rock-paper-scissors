@@ -12,7 +12,6 @@ const rockBtn = document.getElementById("rock");
 rockBtn.addEventListener("click", humanRock);
 
 function humanRock() {
-  document.getElementById("text").innerHTML = "rock";
   key = 0
   gameLogic(key);
 }
@@ -21,7 +20,6 @@ const paperBtn = document.getElementById("paper");
 paperBtn.addEventListener("click", humanPaper);
 
 function humanPaper() {
-  document.getElementById("text").innerHTML = "paper";
   key = 1
   gameLogic(key);
 }
@@ -30,7 +28,6 @@ const scissorsBtn = document.getElementById("scissors");
 scissorsBtn.addEventListener("click", humanScissors);
 
 function humanScissors() {
-  document.getElementById("text").innerHTML = "scissors";
   key = 2
   gameLogic(key);
 }
@@ -50,71 +47,54 @@ function gameLogic(humanKey, computerKey) {
     if (computerChoice === 'Scissors' && humanChoice === 'Scissors') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         It's a tie! No points awarded. Try again.`
-
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("Tie! Try again.")
+        scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Scissors' && humanChoice === 'Rock') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         You wwin! Add one point to your score.`
-
         humanScore++
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("You win!")
+        scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Scissors' && humanChoice === 'Paper') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         The computer wins! Addd one point to their score.`
-
         computerScore++
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("The computer wins!")
+        scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Rock' && humanChoice === 'Scissors') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         The computer wins! Add one point to their score!`
-
         computerScore++
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("The computer wins!")
+        scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Rock' && humanChoice === 'Rock') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         It's a tie! No points awarded. Try again.`
-
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("Tie! Try again.")
+        scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Rock' && humanChoice === 'Paper') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         You win! Add one point to your score!`
-
         humanScore++
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("You win!")
+        scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Paper' && humanChoice === 'Scissors') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         The computer wins! Add one point to their score.`
-
         computerScore++
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("You lose!")
+        scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Paper' && humanChoice === 'Rock') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         You win! Add one point to your score!`
-
         humanScore++
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("You win!")
+        scoreBoard(humanScore, computerScore);
     } else (computerChoice === 'Paper' && humanChoice === 'Paper') 
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         It's a tie! No points awarded. Try again.`
-
-        console.log(`Player: ${humanScore} Computer: ${computerScore}`)
-        console.log(`The computer picked ${computerChoice} and you picked ${humanChoice}...`)
-        console.log("Tie! Try again.") 
+        scoreBoard(humanScore, computerScore);
     }
+
+function scoreBoard(humanScore, computerScore) {
+    if (humanScore === 5) {
+        document.getElementById("scoreboard").innerHTML = `Congratulations! You\'ve reached 5 points first. You win!`
+    } else if (computerScore === 5) {
+        document.getElementById("scoreboard").innerHTML = `Oh no! The computer has reached 5 points first. You lose!`
+    } else {
+        document.getElementById("scoreboard").innerHTML = `User: ${humanScore} | Computer: ${computerScore}`
+    }
+}
 
