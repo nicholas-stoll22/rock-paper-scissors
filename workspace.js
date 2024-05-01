@@ -43,7 +43,6 @@ function gameLogic(humanKey, computerKey) {
     humanChoice = choiceArray[key];
     computerChoice = computerGen();
 
-
     if (computerChoice === 'Scissors' && humanChoice === 'Scissors') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         It's a tie! No points awarded. Try again.`
@@ -82,7 +81,7 @@ function gameLogic(humanKey, computerKey) {
         You win! Add one point to your score!`
         humanScore++
         scoreBoard(humanScore, computerScore);
-    } else (computerChoice === 'Paper' && humanChoice === 'Paper') 
+    } else if (computerChoice === 'Paper' && humanChoice === 'Paper') 
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>
         It's a tie! No points awarded. Try again.`
         scoreBoard(humanScore, computerScore);
