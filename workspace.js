@@ -134,7 +134,7 @@ function gameLogic(humanKey, computerKey) {
         document.getElementById("c2").innerHTML = `vs. `
         document.getElementById("c3").innerHTML = `${art[1]}`
         document.getElementById("result").innerHTML = `You win! Add one point to your score!`
-        computerScore++
+        humanScore++
         scoreBoard(humanScore, computerScore);
     } else if (computerChoice === 'Paper' && humanChoice === 'Rock') {
         document.getElementById("game-text").innerHTML = `You picked "${humanChoice}" and the computer picked "${computerChoice}"... <br/><br/>`
