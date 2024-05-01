@@ -16,8 +16,8 @@
 }
 
 .choice-button:hover {
-    background-color: gray;
-    color: white;
+    background-color: lightgray;
+    color: black;
 }
 
 .choices {
@@ -31,6 +31,7 @@
 }
 
 .game-text {
+    width: 2000px;
     display: flex;
     justify-content: center;
 }
@@ -43,4 +44,33 @@
 .score-box {
     display: flex;
     justify-content: center;
+}
+
+.game {
+    width: 900px;
+    height: 300px;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container > .cols {
+    flex: 1 1 30%;
+    height: 500px;
+}
+
+.cols {
+    border: solid;
 }
